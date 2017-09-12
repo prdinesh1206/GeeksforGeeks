@@ -2,6 +2,7 @@
 public class LinkedList {
 
 	Node head;
+	Node current;
 	public LinkedList(){
 		this.head=null;
 	}
@@ -18,6 +19,15 @@ public class LinkedList {
 		newnode.next=head;
 		head=newnode;
 		
+	}
+	public void insert(int data){
+		if(head == null){
+			head = new Node(data);
+			current = head;
+		}else{
+			current.next = new Node(data);
+			current = current.next;
+		}
 	}
 	public void printList(Node head){
 		Node node=head;
